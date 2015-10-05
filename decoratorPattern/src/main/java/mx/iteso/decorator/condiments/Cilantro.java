@@ -1,0 +1,23 @@
+package mx.iteso.decorator.condiments;
+
+import mx.iteso.decorator.CondimentsDecorator;
+import mx.iteso.decorator.Taco;
+
+public class Cilantro extends CondimentsDecorator {
+    Taco taco;
+
+    public Cilantro (Taco taco){
+        this.taco = taco;
+        this.setSize(taco.size);
+    }
+
+    @Override
+    public String getDescription() {
+        return taco.getDescription() + " con cilantro";
+    }
+
+    @Override
+    public double cost() {
+        return 0 + this.taco.cost();
+    }
+}
